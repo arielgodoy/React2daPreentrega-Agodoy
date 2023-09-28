@@ -1,45 +1,50 @@
 .layout {
   display: grid;
   gap: 4px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 0.5fr 2fr 2fr 0.5fr;
+  grid-template-columns: 1fr 3fr; /* Cambiamos la estructura de columnas */
+  grid-template-rows: auto 1fr auto; /* Cambiamos la estructura de filas */
   grid-template-areas:
-    "header header header"
-    "sidebar main main"
-    "sidebar section content"
-    "footer footer footer";
+    "header header"
+    "sidebar main"
+    "footer footer";
 }
 
-/* Agrega un borde a los elementos que actúan como líneas divisorias */
-.layout > header,
-.layout > aside,
-.layout > main,
-.layout > section,
-.layout > article,
-.layout > footer {
-  border: 1px solid #ccc;
+/* Estilos específicos para header, navigation, sidebar, main, y footer */
+header {
+  grid-area: header;
+  /* Agrega estilos adicionales para el header si es necesario */
+}
+
+.navigation {
+  /* Si navigation necesita estilos adicionales, agrégalos aquí */
+}
+
+.sidebar {
+  grid-area: sidebar;
+  /* Agrega estilos adicionales para la sidebar si es necesario */
+}
+
+main {
+  grid-area: main;
+  /* Agrega estilos adicionales para el main si es necesario */
+}
+
+footer {
+  grid-area: footer;
+  /* Agrega estilos adicionales para el footer si es necesario */
 }
 
 @media screen and (max-width: 768px) {
   .layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.4fr 4fr 2fr 2fr 0.5fr;
+    grid-template-columns: 1fr; /* Cambia a una sola columna en dispositivos móviles */
+    grid-template-rows: auto auto 1fr auto auto; /* Cambia la estructura de filas para adaptarse a dispositivos móviles */
     grid-template-areas:
       "header"
+      "navigation"
       "sidebar"
       "main"
-      "section"
-      "content"
       "footer";
   }
-  
-  /* Agrega un borde a los elementos que actúan como líneas divisorias en la versión móvil */
-  .layout > header,
-  .layout > aside,
-  .layout > main,
-  .layout > section,
-  .layout > article,
-  .layout > footer {
-    border: 1px solid #ccc;
-  }
+
+  /* Estilos adicionales para componentes en dispositivos móviles si es necesario */
 }

@@ -1,31 +1,35 @@
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importar los estilos de Bootstrap
-import './dashboard.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
-import Sidebar from '../components/Sidebar';
 import MainContent from '../components/MainContent';
+import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
-
+import './dashboard.css';
 
 function Dashboard() {
     return (
         <div className="layout">
             <header>
                 <Header />
-                <div className="navigation"><Navigation /></div>
             </header>
-
-            <aside><Sidebar /></aside>
-            <main className='section'>
-                <MainContent />
+            <div className="navigation">
+                <Navigation />
+            </div>
+            <aside>
+                <Sidebar />
+            </aside>
+            <main>
+                <section className="section">
+                    <MainContent />
+                </section>
                 <article></article>
             </main>
-            
-            <footer><Footer /></footer>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     );
 }
 
 export default Dashboard;
-
-
