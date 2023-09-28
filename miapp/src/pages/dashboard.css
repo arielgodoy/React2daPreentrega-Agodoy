@@ -1,0 +1,45 @@
+.layout {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.5fr 2fr 2fr 0.5fr;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "sidebar section content"
+    "footer footer footer";
+}
+
+/* Agrega un borde a los elementos que actúan como líneas divisorias */
+.layout > header,
+.layout > aside,
+.layout > main,
+.layout > section,
+.layout > article,
+.layout > footer {
+  border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.4fr 4fr 2fr 2fr 0.5fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "section"
+      "content"
+      "footer";
+  }
+  
+  /* Agrega un borde a los elementos que actúan como líneas divisorias en la versión móvil */
+  .layout > header,
+  .layout > aside,
+  .layout > main,
+  .layout > section,
+  .layout > article,
+  .layout > footer {
+    border: 1px solid #ccc;
+  }
+}
