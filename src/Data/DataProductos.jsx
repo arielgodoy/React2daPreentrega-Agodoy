@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import LeeProducto from './LeeProducto';
+
 
 function DataProductos() {
   const [products, setProducts] = useState([]);
@@ -22,25 +24,16 @@ function DataProductos() {
   }, []);
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-3">
       <h2>Productos</h2>
       <div className="row">
         {loading ? (
           <p>Cargando productos...</p>
         ) : (
-          products.map((product) => (
-            <div key={product.id} className="col-md-4 mb-4">
-              <div className="card">
-                <img src={product.image} className="card-img-top img-fluid" alt={product.title} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  {/* <p className="card-text">{product.description}</p> */}
-                  <p className="card-text">Precio: ${product.price.toFixed(2)}</p>
-                  <button className="btn btn-info">Ver Detalle</button>
-                  <button className="btn btn-primary">Agregar al carrito</button>
-                </div>
-              </div>
-            </div>
+          products.map((prod) => (
+            
+            <LeeProducto producto={prod} key={prod.id}/> 
+            
           ))
         )}
       </div>
