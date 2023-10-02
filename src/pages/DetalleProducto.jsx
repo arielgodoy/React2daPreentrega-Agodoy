@@ -24,11 +24,7 @@ const DetalleProducto = () => {
   if (!detail) return <>Cargando...</>;
 
   return (
-    <>     
-
-      {/* <Link to="/detail/ditto">Ditto</Link>
-      <Link to="/detail/charmander">charmander</Link>
-      <Link to="/detail/pikachu">Pikachu</Link> */}
+    <>           
 <div class="container text-center">
   <div className="row">
     <div className="col-md-3 mx-auto">
