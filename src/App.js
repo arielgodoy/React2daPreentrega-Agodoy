@@ -16,7 +16,9 @@ function App() {
         <Route path="/Ofertas" element={<Home />} />
         <Route path="/Avances" element={<Home />} />        
         <Route path="/DetalleProducto/:productid" element={<DetalleProducto />} />
+        <Route path="/categoria/" element={<DataProductosFiltered/>} />   
         <Route path="/categoria/:categoria" element={<DataProductosFiltered/>} />   
+        
 
       </Routes>
     </BrowserRouter>

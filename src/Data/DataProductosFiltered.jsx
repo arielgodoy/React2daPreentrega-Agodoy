@@ -12,11 +12,14 @@ const DataProductosFiltered = () => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`https://fakestoreapi.com/products/category/${categoria}`);
+        const url = categoria ? `https://fakestoreapi.com/products/category/${categoria}` : 'https://fakestoreapi.com/products'
+        const response = await axios.get(url);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching products:", error);
+      }finally{
+        setLoading(false);
       }
     };
 
@@ -28,8 +31,8 @@ const DataProductosFiltered = () => {
       <h2>Productos</h2>
       <div className="row">
         {loading ? (
-          <div class="spinner">
-            <div class="spinner-border" role="status"></div>
+          <div className="spinner">
+            <div className="spinner-border" role="status"></div>
           </div>
         ) : (
           <>

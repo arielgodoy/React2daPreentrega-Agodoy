@@ -35,9 +35,8 @@ const Navbar = () => {
           <li className="nav-item">
               <NavLink
                 className="nav-link"
-                to="/"
-                activeClassName="active"
-                exact
+                to="/"               
+                
               >
                 Inicio
               </NavLink>
@@ -66,7 +65,7 @@ const Navbar = () => {
               <NavLink
                 className="nav-link disabled"
                 to="/Ofertas"
-                activeClassName="active"
+                
               >
                 Ofertas
               </NavLink>
@@ -75,7 +74,7 @@ const Navbar = () => {
               <NavLink
                 className="nav-link disabled"
                 to="/Avance"
-                activeClassName="active"
+                
               >
                 Avance de Temporada
               </NavLink>

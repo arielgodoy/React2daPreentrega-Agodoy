@@ -12,7 +12,8 @@ const DetalleProducto = () => {
   const { productid } = useParams();
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${productid}`)
+    const url = `https://fakestoreapi.com/products/${productid}`
+    fetch(url)
       .then((response) => {
         return response.json();
       })

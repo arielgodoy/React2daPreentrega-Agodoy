@@ -29,8 +29,8 @@ function DataProductos() {
       <div className="row">
         {/* cargando hasta que se resuelve el fetch de la APi*/ }
         {loading ? (
-          <div class="spinner">
-            <div class="spinner-border" role="status">
+          <div className="spinner">
+            <div className="spinner-border" role="status">
             </div>
         </div>
         ) : (

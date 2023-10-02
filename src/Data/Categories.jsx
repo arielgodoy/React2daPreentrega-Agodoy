@@ -30,7 +30,7 @@ function Categories() {
       ) : (
         <ul>
           {categories.map((category, index) => (            
-            <Link className="dropdown-item" to={`/categoria/${category}`}> {category.charAt(0).toUpperCase() + category.slice(1)}</Link>
+            <Link className="dropdown-item" key={index} to={`/categoria/${category}`}> {category.charAt(0).toUpperCase() + category.slice(1)}</Link>
 
           ))}
         </ul>
