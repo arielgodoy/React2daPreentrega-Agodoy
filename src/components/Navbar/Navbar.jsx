@@ -61,9 +61,10 @@ const Navbar = () => {
                 <Categories />
               </div>
             </li>
-            <li className="nav-item" disabled>
+
+            <li className="nav-item">
               <NavLink
-                className="nav-link"
+                className="nav-link disabled"
                 to="/Ofertas"
                 activeClassName="active"
               >
@@ -72,16 +73,20 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                className="nav-link"
-                to="/Avances"
+                className="nav-link disabled"
+                to="/Avance"
                 activeClassName="active"
               >
-                Avance Temporada...
+                Avance de Temporada
               </NavLink>
             </li>
+            
+
             <li className="nav-item">
-              <NavLink className="nav-link" href="/Carrito">
-                <CartWidget/>
+              <NavLink 
+              className="nav-link" 
+              to="/Carrito">
+              <CartWidget/>
               </NavLink>
 
             </li>
