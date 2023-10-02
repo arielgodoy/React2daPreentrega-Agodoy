@@ -26,12 +26,12 @@ function Categories() {
     <>
       
       {loading ? (
-        <p>Cargando categorías...</p>
+        <p>Cargando categorías al Menu...</p>
       ) : (
         <ul>
-          {categories.map((category, index) => (
-            //<li key={index}>{category}</li>
-            <Link className="dropdown-item" key={index} to="/type/{category}">{category.charAt(0).toUpperCase() + category.slice(1)}</Link>
+          {categories.map((category, index) => (            
+            <Link className="dropdown-item" to={`/categoria/${category}`}> {category.charAt(0).toUpperCase() + category.slice(1)}</Link>
+
           ))}
         </ul>
       )}

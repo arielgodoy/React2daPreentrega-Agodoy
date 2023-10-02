@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LeeProducto from "./LeeProducto";
-import "font-awesome/css/font-awesome.min.css";
+import { useParams } from "react-router-dom";
 
-function DataProductos() {
+const DataProductosFiltered= () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+  const { categoria } = useParams();
+  
 
-  useEffect(() => {
-    // Función para obtener los productos desde la FakeStore API
+  useEffect(() => {    
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
+        console.log(categoria);
+        const response = await axios.get(`https://fakestoreapi.com/products/category/${categoria}`);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
-
-    // Llamar a la función para obtener los productos
+    
     fetchProducts();
-  }, []);
+  }, [categoria]);
 
   return (
     <div className="container mt-3">
@@ -41,4 +43,4 @@ function DataProductos() {
   );
 }
 
-export default DataProductos;
+export default DataProductosFiltered;

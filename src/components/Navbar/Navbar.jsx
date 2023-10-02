@@ -6,13 +6,14 @@ import CartWidget from "../CartWidget";
 
 
 const Navbar = () => {
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
           <img
             src={logo}
-            alt="Pokeball Logo"
+            alt="El logo de mi Tienda Falsa"
             width="50"
             height="50"
             className="d-inline-block align-left"
@@ -45,7 +46,7 @@ const Navbar = () => {
               <NavLink
                 className="nav-link dropdown-toggle"
                 to="#"
-                id="pokemonTypesDropdown"
+                id="productoCategoriaDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
@@ -55,12 +56,12 @@ const Navbar = () => {
               </NavLink>
               <div
                 className="dropdown-menu"
-                aria-labelledby="pokemonTypesDropdown"
+                aria-labelledby="productoCategoriaDropdown"
               >
                 <Categories />
               </div>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" disabled>
               <NavLink
                 className="nav-link"
                 to="/detail"

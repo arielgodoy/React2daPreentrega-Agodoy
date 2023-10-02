@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <>      
-      <ItemListContainer greetings={"Figuras de Acción Coleccionables"} />
+      <ItemListContainer  />
     </>
   );
 };

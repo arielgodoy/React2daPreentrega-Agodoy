@@ -6,7 +6,7 @@ function ItemListContainer() {
   return (
     <>
     {/* Pasamos la url a data productos por props */}
-    <DataProductos url={'https://fakestoreapi.com/products/1'} />
+    <DataProductos />
     </>
 
   );
