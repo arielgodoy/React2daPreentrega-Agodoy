@@ -5,15 +5,13 @@ import { useParams } from "react-router-dom";
 
 const DataProductosFiltered= () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  
+  const [loading, setLoading] = useState(true);  
   const { categoria } = useParams();
   
-
+ // cuando "categoria" cambia por useparams dispara el useEffect si no se carga sol la primera vez
   useEffect(() => {    
     const fetchProducts = async () => {
-      try {
-        console.log(categoria);
+      try {                
         const response = await axios.get(`https://fakestoreapi.com/products/category/${categoria}`);
         setProducts(response.data);
         setLoading(false);
@@ -23,13 +21,13 @@ const DataProductosFiltered= () => {
     };
     
     fetchProducts();
-  }, [categoria]);
+  }, [categoria]); //>>> disparado por useParams
 
   return (
     <div className="container mt-3">
       <h2>Productos</h2>
       <div className="row">
-        {/* cargando hasta que se resuelve el fetch de la APi*/ }
+        {/* carga spinner hasta que se resuelve el fetch de la APi*/ }
         {loading ? (
           <div class="spinner">
             <div class="spinner-border" role="status">
@@ -40,7 +38,7 @@ const DataProductosFiltered= () => {
         )}
       </div>
     </div>
-  );
+  ) ;  
 }
 
 export default DataProductosFiltered;
