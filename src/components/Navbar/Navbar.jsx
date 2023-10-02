@@ -64,7 +64,7 @@ const Navbar = () => {
             <li className="nav-item" disabled>
               <NavLink
                 className="nav-link"
-                to="/detail"
+                to="/Ofertas"
                 activeClassName="active"
               >
                 Ofertas
@@ -73,7 +73,7 @@ const Navbar = () => {
             <li className="nav-item">
               <NavLink
                 className="nav-link"
-                to="/dashboard"
+                to="/Avances"
                 activeClassName="active"
               >
                 Avance Temporada...

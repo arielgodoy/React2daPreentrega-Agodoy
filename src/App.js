@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar el archivo CSS de Bootstrap
 import 'bootstrap/dist/js/bootstrap.bundle.min'; // Importar el archivo JavaScript de Bootstrap
 import 'font-awesome/css/font-awesome.min.css';
@@ -14,11 +13,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/Ofertas" element={<Home />} />
+        <Route path="/Avances" element={<Home />} />
         <Route path="/DetalleProducto" element={<DetalleProducto />} />        
         <Route path="/DetalleProducto/:productid" element={<DetalleProducto />} />
-        <Route path="/categoria/:categoria" element={<DataProductosFiltered/>} />
-        
+        <Route path="/categoria/:categoria" element={<DataProductosFiltered/>} />   
 
       </Routes>
     </BrowserRouter>
