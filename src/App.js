@@ -6,6 +6,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import Navbar from "./components/Navbar/Navbar";
 import DetalleProducto from "./pages/DetalleProducto";
 import DataProductosFiltered from "./Data/DataProductosFiltered";
+import './App.css'
 
 function App() {
   return (
